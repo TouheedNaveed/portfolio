@@ -7,6 +7,7 @@ import { useState } from "react";
 import animationData from '@/data/confetti.json';
 import { IoCopyOutline } from "react-icons/io5";
 import MagicButton from "./MagicButton";
+
 export const BentoGrid = ({
     className,
     children,
@@ -48,11 +49,22 @@ export const BentoGridItem = ({
 }) => {
     const leftLists = ["ReactJS", "Tailwind CSS", "NodeJS"];
     const rightLists = ["MongoDB", "NextJS", "UI/UX"];
-    const[copied,setCopied]=useState(false);
-    const handleCopy = ()=>{
+    const [copied, setCopied] = useState(false);
+    const [animationPlaying, setAnimationPlaying] = useState(false);
+    const handleCopy = () => {
         navigator.clipboard.writeText('braja7059@ggmail.com');
-        setCopied(true);
-    }
+        let a=setCopied(true);
+        setAnimationPlaying(true);
+
+        setTimeout(() => {
+            setCopied(false);  
+        }, 3000);
+
+        setTimeout(() => {
+            setAnimationPlaying(false);  
+        }, 2000);
+    };
+
     return (
         <div
             className={cn(
@@ -77,7 +89,7 @@ export const BentoGridItem = ({
                 </div>
                 {id === 6 && (
                     <BackgroundGradientAnimation>
-                        <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
+                        {/* <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div> */}
                     </BackgroundGradientAnimation>
                 )}
 
@@ -91,10 +103,9 @@ export const BentoGridItem = ({
                         {title}
                     </div>
 
-
                     {id === 2 && <GlobeDemo />}
                     {id === 3 && (
-                        <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+                        <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-[4px]">
 
                             <div className="flex flex-col gap-3 md:gap-3 lg:gap-6">
                                 {leftLists.map((item, i) => (
@@ -118,20 +129,22 @@ export const BentoGridItem = ({
                             </div>
                         </div>
                     )}
-                    {id===6 && (
+                    {id === 6 && (
                         <div className="mt-5 relative">
                             <div className={`absolute -bottom-5 right-0`}>
-                                <Lottie options={{
-                                    loop: copied,
-                                    autoplay:copied,
-                                    animationData,
-                                    rendererSettings:{
-                                        preserveAspectRatio:'xMidYmid slice',
-                                    }
-                                }}/>
+                                {animationPlaying && ( 
+                                    <Lottie options={{
+                                        loop: false,
+                                        autoplay: true,
+                                        animationData,
+                                        rendererSettings: {
+                                        preserveAspectRatio: 'xMidYMid slice',
+                                        }
+                                    }} />
+                                )}
                             </div>
                             <MagicButton title={copied ? 'Email copied' : 'Copy my email'}
-                                icon={<IoCopyOutline/>}
+                                icon={<IoCopyOutline />}
                                 position='left'
                                 otherClasses="!bg-[#161a31]"
                                 handleClick={handleCopy}
