@@ -53,7 +53,7 @@ export const BentoGridItem = ({
     const [animationPlaying, setAnimationPlaying] = useState(false);
     const handleCopy = () => {
         navigator.clipboard.writeText('braja7059@ggmail.com');
-        let a=setCopied(true);
+        setCopied(true);
         setAnimationPlaying(true);
 
         setTimeout(() => {

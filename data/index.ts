@@ -182,14 +182,14 @@ export const navItems = [
       id: 2,
       title: "Mobile App Dev - JSM Tech",
       desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-      className: "md:col-span-2", // change to md:col-span-2
+      className: "md:col-span-2", 
       thumbnail: "/exp2.svg",
     },
     {
       id: 3,
       title: "Freelance App Dev Project",
       desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-      className: "md:col-span-2", // change to md:col-span-2
+      className: "md:col-span-2",
       thumbnail: "/exp3.svg",
     },
     {
@@ -205,13 +205,16 @@ export const navItems = [
     {
       id: 1,
       img: "/git.svg",
+      link:"https://github.com/TouheedNaveed",
     },
     {
       id: 2,
-      img: "/twit.svg",
+      img: "/insta.svg",
+      link:"https://www.instagram.com/itx._.rj._.010/"
     },
     {
       id: 3,
       img: "/link.svg",
+      link:"https://www.linkedin.com/in/touheednaveed/",
     },
   ];
