@@ -102,6 +102,14 @@ export const navItems = [
       iconLists: ["/re.svg", "/bootstrap.svg"],
       link: "https://inotebk.netlify.app/",
     },
+    {
+      id: 5,
+      title: "Flex Pulse",
+      des: "Empowering Every Move, Elevating Your Fitness. This emphasizes the focus on exercise and personal growth through movement.",
+      img: "/p5.png",
+      iconLists: ["/re.svg", "/mui.svg"],
+      link: "https://flexpulsegym.netlify.app/",
+    },
   ];
   
   export const testimonials = [
