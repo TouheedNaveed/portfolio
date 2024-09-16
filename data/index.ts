@@ -110,6 +110,14 @@ export const navItems = [
       iconLists: ["/re.svg", "/mui.svg"],
       link: "https://flexpulsegym.netlify.app/",
     },
+    {
+      id: 6,
+      title: "AORA",
+      des: "Where Creativity meets innovation. An AI video generated application.",
+      img: "/p6.png",
+      iconLists: ["/re.svg", "/expo.svg"],
+      link: "https://github.com/TouheedNaveed/Aora.git",
+    },
   ];
   
   export const testimonials = [
@@ -148,7 +156,7 @@ export const navItems = [
   export const companies = [
     {
       id: 1,
-      name: "cloudinary",
+      name: "Cloudinary",
       img: "/cloud.svg",
       nameImg: "/cloudName.svg",
     },
