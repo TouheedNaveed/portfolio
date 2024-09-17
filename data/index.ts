@@ -89,7 +89,7 @@ export const navItems = [
     {
       id: 3,
       title: "The News Horizon",
-      des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+      des: "Find the latest news from all over the world.",
       img: "/p3.png",
       iconLists: ["/re.svg", "/bootstrap.svg"],
       link: "https://github.com/TouheedNaveed/The-News-Horizon",
