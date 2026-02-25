@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-plus-jakarta), sans-serif;
+  --font-display: var(--font-poppins), sans-serif;
+
+  --color-bg-base: #0c0c0e;
+  --color-bg-surface: #141418;
+  --color-bg-elevated: #1c1c22;
+  --color-text-primary: #f2f2ed;
+  --color-text-secondary: #8a8a9a;
+  --color-text-muted: #4a4a5a;
+  --color-accent-1: #3b1fd4;
+  --color-accent-2: #8b3fe8;
+  --color-accent-3: #e03fd8;
+  --color-accent-4: #ff6b35;
+}
+
+:root {
+  --bg-base: #0c0c0e;
+  --bg-surface: #141418;
+  --bg-elevated: #1c1c22;
+  --text-primary: #f2f2ed;
+  --text-secondary: #8a8a9a;
+  --text-muted: #4a4a5a;
+  --accent-1: #3b1fd4;
+  --accent-2: #8b3fe8;
+  --accent-3: #e03fd8;
+  --accent-4: #ff6b35;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-glow: rgba(139, 63, 232, 0.3);
+  --gradient-accent: linear-gradient(135deg, #3b1fd4 0%, #8b3fe8 30%, #e03fd8 65%, #ff6b35 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(139, 63, 232, 0.4);
+  color: var(--text-primary);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient border utility */
+.gradient-border {
+  position: relative;
+  background: var(--gradient-accent);
+  border-radius: 18px;
+  padding: 2px;
+}
+
+.gradient-border-inner {
+  background: var(--bg-base);
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+.card-hover:hover {
+  transform: scale(1.015);
+  border-color: var(--border-glow);
+}
+
+/* Marquee containers */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 35s linear infinite;
+}
+
+.marquee-track-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 35s linear infinite;
+}
+
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Proficiency bar animation */
+@keyframes grow-width {
+  from { width: 0%; }
+  to { width: var(--target-width); }
+}
+
+.skill-bar-fill {
+  animation: grow-width 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-glow);
+}
